@@ -25,7 +25,7 @@ for i in range(int(len(data_splited)/(180+1))):#0-11，因为int会把float强�
     for j in range(i*(180+1),(i+1)*(180+1)):
         if j % (181) !=0:
             temp = data_splited[j].replace("-32768"," -32768") #-缺省值32768没有空格，所以会出问题，给所有出现-32768的加一个空格
-            temp = [x for x in temp.split(" ") if x !=""]#根据上面的进行分行
+            temp = [float(x) for x in temp.split(" ") if x !=""]#根据上面的进行分行
             one_month_data.append(temp)
         else:
             one_month_description=data_splited[j]
@@ -36,7 +36,8 @@ for i in range(int(len(data_splited)/(180+1))):#0-11，因为int会把float强�
 # print(len(months_data))
 # print(len(months_data[0]))
 # print(len(months_data[0][0]))
-# print(len(months_data[0][90]))
-# print(len(months_data[0][179]))
+#print(len(months_data[0][90]))
+#print(len(months_data[0][179]))
+#print(months_data[0][179])
 
 

@@ -11,7 +11,7 @@ if __name__ == "__main__":
         for j in range(i*(180+1),(i+1)*(180+1)):
             if j % (181) !=0:
                 temp = data_splited[j].replace("-32768"," -32768")
-                temp = [x for x in temp.split(" ") if x !=""]
+                temp = [float(x) for x in temp.split(" ") if x !=""]
                 one_month_data.append(temp)
             else:
                 one_month_description=data_splited[j]
